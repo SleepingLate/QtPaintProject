@@ -1,0 +1,57 @@
+{"Figure":[
+    {
+        "centrx": 200,
+        "centry": 210,
+        "cordx": 83,
+        "cordy": 85,
+        "id": 1,
+        "type": 0
+    },
+    {
+        "centrx": 392,
+        "centry": 227,
+        "cordx": 64,
+        "cordy": 116,
+        "id": 2,
+        "type": 0
+    },
+    {
+        "centrx": 202,
+        "centry": 355,
+        "cordx": 98,
+        "cordy": 116,
+        "id": 3,
+        "type": 2
+    },
+    {
+        "centrx": 138,
+        "centry": 130,
+        "cordx": 130,
+        "cordy": 76,
+        "id": 4,
+        "type": 1
+    }
+]
+,"Line":[
+    {
+        "id1": 1,
+        "id2": 4
+    },
+    {
+        "id1": 1,
+        "id2": 2
+    },
+    {
+        "id1": 1,
+        "id2": 3
+    },
+    {
+        "id1": 2,
+        "id2": 3
+    },
+    {
+        "id1": 3,
+        "id2": 4
+    }
+]
+}
