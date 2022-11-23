@@ -22,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete scene;  // Объявляем кастомную графическую сцену
+    delete timer;
 }
 
 void MainWindow::slotTimer()

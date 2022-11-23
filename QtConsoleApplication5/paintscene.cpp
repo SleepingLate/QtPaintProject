@@ -10,7 +10,10 @@ PaintScene::PaintScene(QObject* parent) : QGraphicsScene(parent)
 
 PaintScene::~PaintScene()
 {
-
+	delete pressedItem;
+	delete tempFigure;
+	delete targedItem;
+	delete Line;
 }
 
 int PaintScene::typeCommand() const
@@ -97,26 +100,23 @@ void PaintScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
 		switch (m_typeCommand) {
 		case SquareType: {
 			tempFigure = nullptr;
-			Square* item = new Square();
-			item->setStartPoint(event->scenePos());
-			item->setEndPoint(event->scenePos());
-			tempFigure = item;
+			tempFigure = new Square();
+			tempFigure->setStartPoint(event->scenePos());
+			tempFigure->setEndPoint(event->scenePos());
 			addItem(tempFigure);
 			break;
 		}
 		case EllipsType: {
-			Ellips* item = new Ellips();
-			item->setStartPoint(event->scenePos());
-			item->setEndPoint(event->scenePos());
-			tempFigure = item;
+			tempFigure = new Ellips();
+			tempFigure->setStartPoint(event->scenePos());
+			tempFigure->setEndPoint(event->scenePos());
 			addItem(tempFigure);
 			break;
 		}
 		case TriangleType: {
-			Triangle* item = new Triangle();
-			item->setStartPoint(event->scenePos());
-			item->setEndPoint(event->scenePos());
-			tempFigure = item;
+			tempFigure = new Triangle();
+			tempFigure->setStartPoint(event->scenePos());
+			tempFigure->setEndPoint(event->scenePos());
 			addItem(tempFigure);
 			break;
 		}
@@ -173,10 +173,9 @@ void PaintScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
 			break;
 		}
 		default: {
-			Square* item = new Square();
-			item->setEndPoint(event->scenePos());
-			item->setStartPoint(event->scenePos());
-			tempFigure = item;
+			tempFigure = new Square();
+			tempFigure->setEndPoint(event->scenePos());
+			tempFigure->setStartPoint(event->scenePos());
 			addItem(tempFigure);
 			break;
 		}
